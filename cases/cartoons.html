@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Мультфильмы на ИИ — кейс Анны Сысоевой</title>
+<meta name="description" content="Мультфильмы, созданные с помощью нейросетей: свадебная история пары от детства до «да» и короткие мультики о девочке и котиках.">
+<meta name="theme-color" content="#0e0c0a">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="case.css?v=1">
+<style>
+  .film { margin-top: 8px; }
+  .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; border-radius: 22px; border: 1px solid rgba(232, 200, 140, .18); box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8); }
+  .film figcaption { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 14px; color: rgba(243, 236, 225, .6); font-size: 15px; }
+  .film figcaption b { color: #f3ece1; font-weight: 500; }
+  .films-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .story { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 36px; border-top: 1px solid rgba(232, 200, 140, .14); }
+  .story li { list-style: none; padding: 22px 22px 0 0; }
+  .story li + li { padding-left: 22px; border-left: 1px solid rgba(232, 200, 140, .14); }
+  .story b { display: block; font-family: var(--serif, Georgia, serif); font-size: 20px; font-weight: 400; margin-bottom: 6px; color: #f3ece1; }
+  .story span { color: rgba(243, 236, 225, .6); font-size: 15px; line-height: 1.55; }
+  @media (max-width: 900px) {
+    .films-2 { grid-template-columns: 1fr; }
+    .story { grid-template-columns: 1fr 1fr; }
+    .story li:nth-child(3) { padding-left: 0; border-left: 0; }
+  }
+  @media (max-width: 560px) {
+    .story { grid-template-columns: 1fr; }
+    .story li, .story li + li { padding-left: 0; border-left: 0; }
+    .film video { border-radius: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo gold" href="../" aria-label="На главную">АС.</a>
+  <a class="back" href="../#works">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    <span>Все работы</span>
+  </a>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="kicker reveal">Кейс · Мультфильмы на ИИ</p>
+    <h1 class="reveal d1">Мультфильмы, <span class="gold">в которых узнают себя</span></h1>
+    <p class="lead reveal d2">Нейросети позволяют сделать мультфильм с вашими героями без студии анимации: историю пары к свадьбе, ролик для бренда или сказку для ребёнка. Ниже два примера: свадебный подарок и короткие мультики о девочке и котиках.</p>
+    <dl class="meta reveal d3">
+      <div><dt>Формат</dt><dd>Мультфильмы в 3D-стиле</dd></div>
+      <div><dt>Хронометраж</dt><dd>от 15 секунд до 1,5 минуты</dd></div>
+      <div><dt>Поводы</dt><dd>Свадьба, подарок, контент для соцсетей</dd></div>
+      <div><dt>Подход</dt><dd>Сценарий, персонажи и анимация с ИИ</dd></div>
+    </dl>
+  </section>
+
+  <!-- Свадебный -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 01</p><h2 class="h2">«Яна и Максим»</h2></div>
+      <p>Мультфильм к свадьбе: история пары от первых шагов до «да» и благодарность родителям.</p>
+    </div>
+    <figure class="film reveal">
+      <video controls preload="none" playsinline poster="../img/cases/wedding.jpg" width="1280" height="720">
+        <source src="../media/wedding.mp4" type="video/mp4">
+      </video>
+      <figcaption><b>Свадебный мультфильм</b><span>1 мин 36 с · со звуком</span></figcaption>
+    </figure>
+    <ol class="story">
+      <li class="reveal"><b>Детство</b><span>Жених и невеста маленькими: игрушки, поездки с семьёй, первое море.</span></li>
+      <li class="reveal d1"><b>Спасибо родителям</b><span>Каждая сцена — благодарность: за тепло, за терпение, за каждую дорогу вместе.</span></li>
+      <li class="reveal d2"><b>Встреча</b><span>Дорожки пересекаются, и в кадре появляется уже взрослая пара.</span></li>
+      <li class="reveal d3"><b>Финал</b><span>Родители в образах королей и королев: «вы — наши главные герои».</span></li>
+    </ol>
+  </section>
+
+  <!-- Котики -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 02</p><h2 class="h2">Девочка и котики</h2></div>
+      <p>Короткие мультфильмы с одними и теми же героями: персонажи и улица узнаваемы из ролика в ролик. Такой формат подходит для серии в соцсетях.</p>
+    </div>
+    <div class="films-2">
+      <figure class="film reveal">
+        <video controls preload="none" playsinline poster="../img/cases/cats-1.jpg" width="1280" height="720">
+          <source src="../media/cats-1.mp4" type="video/mp4">
+        </video>
+        <figcaption><b>Серия 1. Котики у кофейни</b><span>15 с</span></figcaption>
+      </figure>
+      <figure class="film reveal d1">
+        <video controls preload="none" playsinline poster="../img/cases/cats-2.jpg" width="1280" height="720">
+          <source src="../media/cats-2.mp4" type="video/mp4">
+        </video>
+        <figcaption><b>Серия 2. Танец на площади</b><span>15 с</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Как работаю -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 03</p><h2 class="h2">Как появляется мультфильм</h2></div>
+    </div>
+    <ol class="flow">
+      <li class="step reveal">
+        <span class="step-n">01</span>
+        <div><h3>История</h3><p>Обсуждаем повод и героев. Для свадебного ролика собираем детские фото и важные моменты пары, для серии придумываем персонажей и мир.</p></div>
+        <div class="tools"><span class="tool me">Обсуждение</span></div>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">02</span>
+        <div><h3>Сценарий и раскадровка</h3><p>Пишу сценарий и тексты в кадре, разбиваю историю на сцены. Вы согласуете до начала производства.</p></div>
+        <div class="tools"><span class="tool">ИИ</span><span class="tool me">Согласование</span></div>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">03</span>
+        <div><h3>Персонажи и сцены</h3><p>Нейросети рисуют героев в едином стиле и сохраняют их узнаваемыми во всех сценах.</p></div>
+        <div class="tools"><span class="tool">ИИ</span></div>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">04</span>
+        <div><h3>Анимация и монтаж</h3><p>Оживляю кадры, собираю ролик, добавляю музыку, титры и переходы.</p></div>
+        <div class="tools"><span class="tool">ИИ</span><span class="tool">Монтаж</span></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 04</p><h2 class="h2">Что это даёт</h2></div>
+    </div>
+    <div class="gains">
+      <div class="gain reveal"><em>i.</em><h3>Подарок, который запомнят</h3><p>Мультфильм о паре или семье трогает сильнее любого слайд-шоу из фотографий.</p></div>
+      <div class="gain reveal d1"><em>ii.</em><h3>Без студии анимации</h3><p>Вместо месяцев работы аниматоров — дни, и бюджет в разы ниже.</p></div>
+      <div class="gain reveal d2"><em>iii.</em><h3>Свои герои</h3><p>Персонажи и стиль под вашу историю или бренд, а не шаблон из стока.</p></div>
+      <div class="gain reveal d3"><em>iv.</em><h3>Серии для соцсетей</h3><p>Одни и те же герои из ролика в ролик: зрители ждут продолжения.</p></div>
+    </div>
+  </section>
+
+  <section class="final">
+    <h2 class="reveal">Хотите свой <i class="gold">мультфильм</i>?</h2>
+    <p class="reveal d1">Расскажите о поводе и героях. Я отвечу в Telegram и предложу идею ролика.</p>
+    <div class="reveal d2">
+      <a class="btn" href="https://t.me/anna_sysoevaaa" target="_blank" rel="noopener">
+        Заказать мультфильм
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+      </a>
+      <span class="more">или <a href="../#works">посмотреть другие работы</a></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a class="logo gold" href="../">АС.</a>
+  <span>© <span id="year"></span> Анна Сысоева · Вайбкодер</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // одновременно играет только одно видео
+  const vids = document.querySelectorAll('video');
+  vids.forEach(v => v.addEventListener('play', () => vids.forEach(o => { if (o !== v) o.pause(); })));
+</script>
+</body>
+</html>
