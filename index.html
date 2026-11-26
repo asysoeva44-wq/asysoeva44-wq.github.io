@@ -266,6 +266,9 @@
   .work:hover .work-info svg { transform: translateX(6px); }
 
   /* Мини-иллюстрации работ */
+  .v-shot { position: absolute; inset: 0; }
+  .v-shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+
   .v-factory { position: absolute; inset: 0; padding: 60px 18px 20px; display: flex; flex-direction: column; justify-content: space-between;
     background: radial-gradient(circle at 80% 15%, rgba(236, 72, 153, .28), transparent 50%), radial-gradient(circle at 15% 90%, rgba(201, 164, 106, .22), transparent 55%), #120f0d; }
   .v-factory svg { width: 100%; height: 46%; overflow: visible; }
@@ -597,6 +600,17 @@
         </div>
       </a>
 
+      <a class="work" href="cases/4cveta.html">
+        <div class="work-visual">
+          <span class="badge ready">Кейс</span>
+          <div class="v-shot" aria-hidden="true"><img src="img/cases/4c-site-mobile.jpg" alt="" width="591" height="1279" loading="lazy"></div>
+        </div>
+        <div class="work-info">
+          <div><h3>4ЦВЕТА: сайт и бот</h3><span>Сайт, Telegram-бот и мини-приложение</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+        </div>
+      </a>
+
       <a class="work" href="#top">
         <div class="work-visual">
           <span class="badge ready">Вы здесь</span>
@@ -608,21 +622,7 @@
         </div>
       </a>
 
-      <div class="work">
-        <div class="work-visual">
-          <span class="badge">В разработке</span>
-          <div class="v-bot" aria-hidden="true">
-            <div class="bubble u">Хочу записаться на консультацию</div>
-            <div class="bubble b">Конечно! Выберите удобный день, и я всё подготовлю ✨</div>
-            <div class="bubble b typing"><i></i><i></i><i></i></div>
-          </div>
-        </div>
-        <div class="work-info">
-          <div><h3>AI и чат-боты</h3><span>Ассистент для приёма заявок</span></div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
-        </div>
-      </div>
-
+      
       <div class="work">
         <div class="work-visual">
           <span class="badge">Скоро</span>
