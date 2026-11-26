@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Сайт для компании по сертификации — кейс Анны Сысоевой</title>
+<meta name="description" content="Сайт компании по сертификации товаров и сбор заявок прямо в Telegram: менеджер получает имя, телефон и вопрос клиента через секунду после отправки формы.">
+<meta name="theme-color" content="#0e0c0a">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="case.css?v=1">
+<style>
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .ba figure { margin: 0; }
+  .ba .browser img { display: block; width: 100%; height: auto; }
+  .ba figcaption { display: flex; align-items: center; gap: 10px; margin-top: 14px; color: var(--muted); font-size: 15px; }
+  .ba figcaption b { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--gold-2); font-size: 20px; }
+  .wide { margin: 0; }
+  .wide img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--line); }
+  .v-tg { max-width: 360px; margin-left: auto; background: #17212b; border-radius: 22px; padding: 18px; border: 1px solid var(--line); box-shadow: 0 30px 80px -30px rgba(0,0,0,.8); font-family: var(--sans); }
+  .v-tg .tg-head { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .v-tg .tg-ava { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg,#2563eb,#7c3aed); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 14px; }
+  .v-tg .tg-head b { display: block; color: #fff; font-size: 15px; font-weight: 600; }
+  .v-tg .tg-head span { color: #6d7f8f; font-size: 13px; }
+  .v-tg .tg-msg { background: #182533; border-radius: 16px 16px 16px 4px; padding: 12px 14px; color: #e9eef3; font-size: 14px; line-height: 1.55; }
+  .v-tg .tg-msg p { margin: 0; }
+  .v-tg .tg-msg p + p { margin-top: 2px; }
+  .v-tg .tg-msg .gap { height: 10px; }
+  .v-tg .tg-msg a { color: #6ab3f3; text-decoration: none; }
+  .v-tg .tg-time { text-align: right; color: #6d7f8f; font-size: 12px; margin-top: 6px; }
+  .v-tg + .chat-note { text-align: right; color: var(--dim); font-size: 13px; margin-top: 12px; }
+  @media (max-width: 900px) { .ba { grid-template-columns: 1fr; } .v-tg { margin: 0 auto; } .v-tg + .chat-note { text-align: center; } }
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo gold" href="../" aria-label="На главную">АС.</a>
+  <a class="back" href="../#works">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    <span>Все работы</span>
+  </a>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="kicker reveal">Кейс · Сайт + заявки в Telegram</p>
+    <h1 class="reveal d1">Сайт для компании <span class="gold">по сертификации</span></h1>
+    <p class="lead reveal d2">Современный дизайн, SEO-статьи и форма заявок: заявка с сайта приходит менеджеру в Telegram через секунду после отправки. Имя, телефон, вопрос и страница, с которой пришёл клиент.</p>
+    <dl class="meta reveal d3">
+      <div><dt>Клиент</dt><dd>Компания по сертификации товаров и услуг</dd></div>
+      <div><dt>Что сделано</dt><dd>Сайт, мобильная версия, SEO-статьи</dd></div>
+      <div><dt>Заявки</dt><dd>Форма → Telegram-бот менеджера</dd></div>
+      <div><dt>Хостинг</dt><dd>Netlify, бесплатный тариф</dd></div>
+    </dl>
+    <div class="demo-links reveal d3">
+      <a class="demo-link" href="https://specsert-group.netlify.app/" target="_blank" rel="noopener">Открыть сайт<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 01</p><h2 class="h2">Задача</h2></div>
+    </div>
+    <div class="task">
+      <p class="quote reveal">Нужен красивый, рабочий сайт, с которого приходят заявки.<small>Запрос заказчика</small></p>
+      <div class="reveal d1">
+        <p>Компания оформляет сертификаты, декларации и другие разрешительные документы по всей России. Восемь направлений: от деклараций для маркетплейсов до сертификатов ISO и пожарной безопасности.</p>
+        <p>Задача от заказчика была простой и понятной: <b>современный сайт, которому доверяют с первого экрана, и форма, заявки из которой сразу попадают к менеджеру</b>. Без лишних сервисов и ежемесячных платежей.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 02</p><h2 class="h2">Что сделано</h2></div>
+    </div>
+
+    <article class="part">
+      <div class="part-text reveal">
+        <span class="step-n">01</span>
+        <h3>Дизайн, который продаёт</h3>
+        <p>Сайт с первого экрана отвечает на главные вопросы клиента: что оформят, сколько стоит, как быстро.</p>
+        <ul class="ticks">
+          <li>Первый экран с карточкой-сертификатом и плашками «от 1 дня», «от 7 000 ₽»</li>
+          <li>Иконки у всех восьми направлений, карточки оживают при наведении</li>
+          <li>Блок цен с выделенной популярной услугой</li>
+          <li>Плавное появление блоков и тёмная тема</li>
+        </ul>
+      </div>
+      <div class="part-media reveal d1">
+        <figure class="browser"><div class="browser-bar"><i></i><i></i><i></i><span>Главная</span></div><img src="../img/cases/ss-new.jpg" alt="Первый экран сайта: заголовок с градиентом, карточка-сертификат и плашки с ценой и сроком" width="1200" height="700" loading="lazy"></figure>
+      </div>
+    </article>
+
+    <article class="part flip">
+      <div class="part-text reveal">
+        <span class="step-n">02</span>
+        <h3>Заявки прямо в Telegram</h3>
+        <p>Форма отправляет заявку в Telegram-бота. Менеджер видит её на телефоне через секунду и перезванивает в одно касание.</p>
+        <ul class="ticks">
+          <li>Имя, телефон, почта, вопрос и страница, с которой пришёл клиент</li>
+          <li>Маска телефона и проверка полей, чтобы не было «пустых» заявок</li>
+          <li>Защита от спам-ботов</li>
+          <li>Если связь подвела, клиент видит телефон и Telegram, и заявка не теряется</li>
+        </ul>
+      </div>
+      <div class="part-media reveal d1">
+        <div>
+          <div class="v-tg" aria-hidden="true">
+            <div class="tg-head"><div class="tg-ava">СЗ</div><div><b>Заявки с сайта</b><span>бот</span></div></div>
+            <div class="tg-msg">
+              <p>🆕 <b>Новая заявка с сайта</b></p>
+              <div class="gap"></div>
+              <p>👤 <b>Имя:</b> Ирина</p>
+              <p>📞 <b>Телефон:</b> <a>+7 (916) 555-12-34</a></p>
+              <p>💬 <b>Вопрос:</b> Нужна декларация на детскую одежду для Wildberries</p>
+              <div class="gap"></div>
+              <p>📄 <b>Страница:</b> Декларация соответствия ТР ТС</p>
+              <p>🕒 26.11.2026, 14:05 МСК</p>
+              <div class="tg-time">14:05</div>
+            </div>
+          </div>
+          <p class="chat-note">Так выглядит заявка у менеджера. Данные клиента вымышлены</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="part">
+      <div class="part-text reveal">
+        <span class="step-n">03</span>
+        <h3>SEO-статьи</h3>
+        <p>Раздел статей под частые вопросы клиентов: люди ищут ответ в поиске, попадают на сайт и оставляют заявку прямо из статьи.</p>
+        <ul class="ticks">
+          <li>«Сертификат или декларация: что нужно вашему товару»</li>
+          <li>«Документы для маркетплейсов в 2026 году»</li>
+          <li>«Отказное письмо: когда поможет, а когда нет»</li>
+          <li>Каждая статья — отдельная страница с разметкой для поисковиков и формой заявки</li>
+        </ul>
+        <a class="demo-link" href="https://specsert-group.netlify.app/stati/" target="_blank" rel="noopener">Открыть статьи<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+      <div class="part-media reveal d1">
+        <figure class="browser"><div class="browser-bar"><i></i><i></i><i></i><span>Статья</span></div><img src="../img/cases/ss-article.jpg" alt="Страница статьи о сертификате и декларации с таблицей сравнения" width="1200" height="760" loading="lazy"></figure>
+      </div>
+    </article>
+
+    <article class="part flip">
+      <div class="part-text reveal">
+        <span class="step-n">04</span>
+        <h3>Удобно с телефона</h3>
+        <p>Большая часть клиентов заходит со смартфона, поэтому мобильная версия продумана отдельно.</p>
+        <ul class="ticks">
+          <li>Снизу всегда под рукой «Позвонить» и «Узнать стоимость»</li>
+          <li>Кнопки Telegram и WhatsApp на каждой странице</li>
+          <li>Меню-бургер и крупные поля формы</li>
+        </ul>
+      </div>
+      <div class="part-media reveal d1">
+        <figure class="phone-fr"><img src="../img/cases/ss-mobile.jpg" alt="Мобильная версия сайта" width="500" height="1000" loading="lazy"></figure>
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 03</p><h2 class="h2">Путь заявки</h2></div>
+      <p>Без CRM, почты и платных сервисов: сайт, статьи и сбор заявок работают на бесплатном хостинге.</p>
+    </div>
+    <ol class="path reveal">
+      <li><em>i.</em><b>Клиент пишет</b><span>имя, телефон и что нужно оформить</span></li>
+      <li><em>ii.</em><b>Сайт проверяет</b><span>поля заполнены, спам отсеян</span></li>
+      <li><em>iii.</em><b>Бот присылает</b><span>сообщение менеджеру в Telegram</span></li>
+      <li><em>iv.</em><b>Менеджер звонит</b><span>в одно касание прямо из сообщения</span></li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 04</p><h2 class="h2">Что это даёт</h2></div>
+    </div>
+    <div class="gains">
+      <div class="gain reveal"><em>i.</em><h3>Ни одной потерянной заявки</h3><p>Каждое обращение сразу у менеджера, а не в забытом почтовом ящике.</p></div>
+      <div class="gain reveal d1"><em>ii.</em><h3>Быстрый ответ</h3><p>Кто перезвонил первым, тот и получил клиента. Telegram видно сразу.</p></div>
+      <div class="gain reveal d2"><em>iii.</em><h3>Доверие с первого экрана</h3><p>Современный сайт выглядит как надёжная компания, а не как черновик.</p></div>
+      <div class="gain reveal d3"><em>iv.</em><h3>Ноль на сервисы</h3><p>Хостинг и отправка заявок бесплатны, без ежемесячных подписок.</p></div>
+    </div>
+  </section>
+
+  <section class="final">
+    <h2 class="reveal">Нужен сайт, который <i class="gold">приносит заявки</i>?</h2>
+    <p class="reveal d1">Расскажите о своём бизнесе. Я отвечу в Telegram и предложу, как сделать сайт и сбор заявок под вас.</p>
+    <div class="reveal d2">
+      <a class="btn" href="https://t.me/anna_sysoevaaa" target="_blank" rel="noopener">
+        Обсудить сайт
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+      </a>
+      <span class="more">или <a href="../#works">посмотреть другие работы</a></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a class="logo gold" href="../">АС.</a>
+  <span>© <span id="year"></span> Анна Сысоева · Вайбкодер</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
