@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Контент-завод на ИИ — кейс Анны Сысоевой</title>
+<meta name="description" content="ИИ-система сама изучает конкурентов, пишет контент, снимает цифрового двойника эксперта и ставит публикации в расписание. 204 111 просмотров за месяц, рост в 75 раз.">
+<meta name="theme-color" content="#0e0c0a">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root {
+    --ink: #0e0c0a;
+    --ink-2: #16130f;
+    --card: rgba(239, 230, 216, 0.035);
+    --cream: #efe6d8;
+    --muted: #a39887;
+    --dim: #6f665a;
+    --line: rgba(239, 230, 216, 0.14);
+    --gold-1: #f4e6c8;
+    --gold-2: #c9a46a;
+    --gold-3: #a8834f;
+    --gold: linear-gradient(100deg, #f6ead2 0%, #d8b77f 28%, #f4e6c8 50%, #b8925a 74%, #f1dfbb 100%);
+    --serif: "Playfair Display", "Times New Roman", Times, serif;
+    --script: "Segoe Script", "Snell Roundhand", "Apple Chancery", "Brush Script MT", cursive;
+    --sans: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+    --pad: clamp(16px, 5vw, 72px);
+    --ease: cubic-bezier(.2, .8, .2, 1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink); color: var(--cream); font-family: var(--sans);
+    font-size: 16px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  ::selection { background: var(--gold-2); color: var(--ink); }
+
+  .bg {
+    position: fixed; inset: 0; z-index: -2; pointer-events: none;
+    background:
+      radial-gradient(1100px 760px at 85% -10%, rgba(201, 164, 106, 0.18), transparent 60%),
+      radial-gradient(900px 700px at -15% 55%, rgba(140, 100, 62, 0.14), transparent 60%),
+      linear-gradient(180deg, #15120e 0%, #0e0c0a 55%, #0b0907 100%);
+  }
+
+  .gold {
+    background: var(--gold); background-size: 220% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: sheen 9s ease-in-out infinite;
+  }
+  @keyframes sheen { 0%, 100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
+  .kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+  .num {
+    display: flex; align-items: center; gap: 14px;
+    font-family: var(--serif); font-style: italic; color: var(--gold-2); font-size: 15px;
+  }
+  .num::after { content: ""; width: 80px; height: 1px; background: var(--line); }
+  .h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(36px, 5vw, 68px); line-height: 1.02; letter-spacing: -.02em; margin-top: 14px;
+  }
+  .script { font-family: var(--script); line-height: 1.35; }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--pad); }
+  .section { padding-top: clamp(72px, 10vw, 130px); }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap;
+    padding-bottom: 26px; border-bottom: 1px solid var(--line); margin-bottom: 40px;
+  }
+  .section-head p { max-width: 380px; color: var(--muted); font-size: 15px; }
+
+  /* Навигация */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 40;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: calc(16px + env(safe-area-inset-top, 0px)) var(--pad) 16px;
+    background: rgba(14, 12, 10, .9); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 var(--line);
+  }
+  .logo { font-family: var(--serif); font-size: 26px; text-decoration: none; letter-spacing: .02em; }
+  .back {
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+    font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); transition: color .3s, gap .3s;
+  }
+  .back svg { width: 16px; height: 16px; }
+  .back:hover { color: var(--cream); gap: 14px; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 18px 34px; border-radius: 999px; text-decoration: none;
+    background: var(--gold); background-size: 220% 100%;
+    color: #1a140d; font-weight: 600; font-size: 16px; letter-spacing: .02em;
+    transition: transform .3s var(--ease), background-position .8s;
+  }
+  .btn svg { width: 18px; height: 18px; transition: transform .3s var(--ease); }
+  .btn:hover { transform: translateY(-3px); background-position: 100% 0; }
+  .btn:hover svg { transform: translateX(4px); }
+
+  .js .reveal { opacity: 0; transform: translateY(36px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+  .js .reveal.in { opacity: 1; transform: none; }
+  .js .reveal.d1 { transition-delay: .12s; } .js .reveal.d2 { transition-delay: .24s; } .js .reveal.d3 { transition-delay: .36s; }
+
+  /* Обложка кейса */
+  .hero { padding-top: clamp(130px, 16vw, 190px); }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(44px, 7.4vw, 108px); line-height: .98; letter-spacing: -.03em; margin: 22px 0 28px; max-width: 1050px;
+  }
+  .hero .lead { max-width: 640px; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.55; color: #d9cfbf; }
+  .meta {
+    display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 54px;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .meta div { padding: 20px 22px 22px 0; }
+  .meta div + div { padding-left: 22px; border-left: 1px solid var(--line); }
+  .meta dt { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); margin-bottom: 6px; }
+  .meta dd { font-size: 15px; }
+
+  /* Цифры */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .stat {
+    padding: 30px 26px 28px; border: 1px solid var(--line); border-radius: 4px; background: var(--card);
+  }
+  .stat.main { background: linear-gradient(135deg, rgba(201, 164, 106, .13), rgba(201, 164, 106, .02) 70%); border-color: rgba(201, 164, 106, .4); }
+  .stat b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 4.4vw, 64px); line-height: 1; letter-spacing: -.02em; }
+  .stat span { display: block; margin-top: 14px; font-size: 14px; color: var(--muted); line-height: 1.45; }
+
+  /* Задача */
+  .task { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 90px); align-items: start; }
+  .task p { color: #cfc5b5; font-size: 17px; margin-bottom: 16px; }
+  .task p b { color: var(--cream); font-weight: 600; }
+  .quote {
+    font-family: var(--serif); font-style: italic; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.25;
+    padding-left: 26px; border-left: 1px solid var(--gold-2);
+  }
+  .quote small { display: block; margin-top: 16px; font-family: var(--sans); font-style: normal; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+
+  /* Схема */
+  .flow { list-style: none; display: grid; gap: 0; counter-reset: s; }
+  .step {
+    position: relative; display: grid; grid-template-columns: 90px 1fr 260px; gap: 12px 30px; align-items: start;
+    padding: 30px 0; border-bottom: 1px solid var(--line);
+  }
+  .step:first-child { border-top: 1px solid var(--line); }
+  .step-n { font-family: var(--serif); font-style: italic; color: var(--gold-2); font-size: 34px; line-height: 1; }
+  .step h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.1; margin-bottom: 10px; }
+  .step p { color: var(--muted); font-size: 15px; max-width: 620px; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+  .tool {
+    font-size: 12px; letter-spacing: .06em; padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--cream); white-space: nowrap;
+  }
+  .tool.me { border-color: rgba(201, 164, 106, .55); color: var(--gold-1); background: rgba(201, 164, 106, .08); }
+  .legend { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 24px; font-size: 13px; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 10px; }
+  .legend i { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--line); }
+  .legend i.me { border-color: var(--gold-2); background: rgba(201, 164, 106, .35); }
+
+  /* Решение по ходу */
+  .insight {
+    display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 90px);
+    padding: clamp(32px, 5vw, 60px); border: 1px solid var(--line); border-radius: 4px;
+    background: linear-gradient(135deg, rgba(201, 164, 106, .09), rgba(201, 164, 106, .015) 60%);
+  }
+  .insight h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 3.6vw, 50px); line-height: 1.04; }
+  .insight h3 .script { display: block; font-size: .42em; color: var(--muted); margin-top: 16px; }
+  .insight p { color: #cfc5b5; font-size: 16px; margin-bottom: 14px; }
+  .insight p b { color: var(--cream); font-weight: 600; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+  .compare div { padding: 18px 20px; border: 1px solid var(--line); border-radius: 4px; }
+  .compare div.now { border-color: rgba(201, 164, 106, .5); }
+  .compare dt { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+  .compare dd { font-family: var(--serif); font-size: 22px; line-height: 1.2; margin-top: 6px; }
+  .compare dd small { display: block; font-family: var(--sans); font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  /* Скриншоты */
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+  .shot figure { border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: #0b0d10; }
+  .shot figcaption { padding: 18px 2px 0; }
+  .shot figcaption b { display: block; font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.2; }
+  .shot figcaption span { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); }
+  .note { margin-top: 26px; font-size: 13px; color: var(--dim); }
+
+  /* Что получает заказчик */
+  .gains { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  .gain { padding: 30px 24px 32px 0; border-bottom: 1px solid var(--line); }
+  .gain + .gain { padding-left: 24px; border-left: 1px solid var(--line); }
+  .gain em { font-family: var(--serif); color: var(--gold-2); font-size: 15px; }
+  .gain h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 1.15; margin: 12px 0 10px; }
+  .gain p { color: var(--muted); font-size: 15px; }
+
+  /* Призыв */
+  .final { text-align: center; padding: clamp(80px, 11vw, 140px) 0 clamp(80px, 10vw, 120px); }
+  .final h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6.4vw, 92px); line-height: 1; letter-spacing: -.025em; margin: 0 auto 24px; max-width: 980px; }
+  .final h2 i { font-style: italic; }
+  .final p { color: var(--muted); max-width: 520px; margin: 0 auto 44px; font-size: 17px; }
+  .final .more { display: block; margin-top: 30px; font-size: 15px; color: var(--muted); }
+  .final .more a { color: var(--cream); text-decoration: none; border-bottom: 1px solid var(--gold-3); padding-bottom: 2px; }
+
+  footer {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+    padding: 28px var(--pad); border-top: 1px solid var(--line); color: var(--dim); font-size: 13px;
+    max-width: 1360px; margin: 0 auto;
+  }
+  footer .logo { font-size: 22px; color: var(--cream); }
+
+  @media (max-width: 1080px) {
+    .stats { grid-template-columns: 1fr 1fr; }
+    .meta { grid-template-columns: 1fr 1fr; }
+    .meta div:nth-child(3) { padding-left: 0; border-left: none; }
+    .meta div:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .task, .insight { grid-template-columns: 1fr; }
+    .step { grid-template-columns: 70px 1fr; }
+    .tools { grid-column: 2; justify-content: flex-start; }
+    .gains { grid-template-columns: 1fr 1fr; }
+    .gain:nth-child(3) { padding-left: 0; border-left: none; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 15px; }
+    .back span { display: none; }
+    .stats { grid-template-columns: 1fr; }
+    .meta { grid-template-columns: 1fr; }
+    .meta div, .meta div + div { padding: 16px 0; border-left: none; }
+    .meta div + div { border-top: 1px solid var(--line); }
+    .step { grid-template-columns: 1fr; gap: 10px; padding: 26px 0; }
+    .tools { grid-column: 1; }
+    .compare { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    .gains { grid-template-columns: 1fr; }
+    .gain, .gain + .gain { padding: 24px 0; border-left: none; }
+    .btn { width: 100%; }
+    footer { justify-content: center; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo gold" href="../" aria-label="На главную">АС.</a>
+  <a class="back" href="../#works">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    <span>Все работы</span>
+  </a>
+</header>
+
+<main class="wrap">
+  <!-- Обложка -->
+  <section class="hero">
+    <p class="kicker reveal">Кейс · Контент-завод на ИИ</p>
+    <h1 class="reveal d1">Контент-завод для <span class="gold">Instagram и YouTube</span></h1>
+    <p class="lead reveal d2">ИИ-система сама изучает конкурентов, пишет контент, снимает цифрового двойника эксперта и ставит публикации в расписание. Эксперт только согласует. За месяц аккаунт, который почти никто не смотрел, набрал 204 тысячи просмотров.</p>
+    <dl class="meta reveal d3">
+      <div><dt>Клиент</dt><dd>Эксперт онлайн-школы</dd></div>
+      <div><dt>Срок</dt><dd>4 недели</dd></div>
+      <div><dt>Площадки</dt><dd>Instagram, YouTube</dd></div>
+      <div><dt>Инструменты</dt><dd>Claude Code, ChatGPT, HeyGen, ElevenLabs</dd></div>
+    </dl>
+  </section>
+
+  <!-- Цифры -->
+  <section class="section">
+    <div class="stats">
+      <div class="stat main reveal"><b class="gold">×75</b><span>рост просмотров за 30 дней<br>(+7 451% к прошлому периоду)</span></div>
+      <div class="stat reveal d1"><b>204 111</b><span>просмотров за месяц работы</span></div>
+      <div class="stat reveal d2"><b>29 197</b><span>просмотров у лучшего ролика.<br>До этого в среднем ~100</span></div>
+      <div class="stat reveal d3"><b>+185</b><span>новых подписчиков за месяц</span></div>
+    </div>
+  </section>
+
+  <!-- Задача -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 01</p><h2 class="h2">Задача</h2></div>
+    </div>
+    <div class="task">
+      <p class="quote reveal">Аккаунт есть, а смотрят его около ста человек на ролик.<small>Точка старта</small></p>
+      <div class="reveal d1">
+        <p>У эксперта онлайн-школы был Instagram, который фактически не работал: ролики набирали <b>около 100 просмотров</b>. Вести его самому некогда, команды на контент нет.</p>
+        <p>Зато было понимание, на кого равняться: эксперт сам назвал блогеров, чей контент ему нравится. Нужна была система, которая регулярно выпускает контент <b>в его стиле и его голосом</b> и не требует его времени каждый день.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Схема -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 02</p><h2 class="h2">Как устроен завод</h2></div>
+      <p>Вся работа идёт в одном проекте Claude Code. Нейросети и аккаунты заказчика подключены в браузере, Claude Code сам переходит между ними.</p>
+    </div>
+
+    <ol class="flow">
+      <li class="step reveal">
+        <span class="step-n">00</span>
+        <div><h3>Фундамент</h3><p>До старта собрали три документа: Tone of Voice эксперта, анализ целевой аудитории и его оффер. Всё, что дальше делает система, опирается на них. Поэтому контент звучит как эксперт, а не «как нейросеть».</p></div>
+        <div class="tools"><span class="tool">Claude Code</span></div>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">01</span>
+        <div><h3>Разведка у конкурентов</h3><p>Claude Code сам заходит в Instagram блогеров-ориентиров, находит ролики, которые залетели, и разбирает, почему: темы, хуки, форматы.</p></div>
+        <div class="tools"><span class="tool">Claude Code</span><span class="tool">Instagram</span></div>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">02</span>
+        <div><h3>Контент-план</h3><p>Черновик плана готовится в ChatGPT, затем Claude Code дорабатывает его под находки разведки и Tone of Voice. План согласовываю я.</p></div>
+        <div class="tools"><span class="tool">ChatGPT</span><span class="tool">Claude Code</span><span class="tool me">Согласование</span></div>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">03</span>
+        <div><h3>Сценарии и тексты</h3><p>Сценарии роликов, тексты каруселей, описания и закреплённые комментарии. Claude проверяет их до производства, затем сценарии согласовываю я.</p></div>
+        <div class="tools"><span class="tool">Claude</span><span class="tool me">Согласование</span></div>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">04</span>
+        <div><h3>Производство</h3><p>Ролики с цифровым двойником эксперта в HeyGen и озвучка его голосом в ElevenLabs. Для YouTube делаются отдельные, уникализированные версии роликов.</p></div>
+        <div class="tools"><span class="tool">HeyGen</span><span class="tool">ElevenLabs</span></div>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">05</span>
+        <div><h3>Сборка и проверка</h3><p>Готовые ролики, карусели и тексты раскладываются по папкам на компьютере. Каждый ролик я смотрю перед публикацией.</p></div>
+        <div class="tools"><span class="tool">Claude Code</span><span class="tool me">Проверка</span></div>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">06</span>
+        <div><h3>Публикация</h3><p>Claude Code сам ставит публикации в отложенный постинг Instagram: Reels или карусель, описание и закреплённый комментарий. Уникализированные версии роликов уходят на YouTube.</p></div>
+        <div class="tools"><span class="tool">Instagram</span><span class="tool">YouTube</span></div>
+      </li>
+    </ol>
+    <div class="legend reveal">
+      <span><i></i>Работает система</span>
+      <span><i class="me"></i>Контрольная точка: проверяет человек</span>
+    </div>
+  </section>
+
+  <!-- Решение по ходу -->
+  <section class="section">
+    <div class="insight reveal">
+      <h3>Меньше, но точнее<span class="script">решение, принятое по ходу работы</span></h3>
+      <div>
+        <p>Заказчик хотел <b>8 единиц контента в день</b>. Но по ходу работы стало видно: когда публикаций так много, они отбирают охват друг у друга.</p>
+        <p>Поэтому объём снизили и разделили на два потока: основная сетка для подписчиков и пробные Reels, которые Instagram показывает только новой аудитории.</p>
+        <dl class="compare">
+          <div><dt>Было в плане</dt><dd>8 в день<small>все в основную сетку</small></dd></div>
+          <div class="now"><dt>Стало</dt><dd>2–3 + ~3 в день<small>основная сетка + пробные Reels</small></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Результаты -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 03</p><h2 class="h2">Результат</h2></div>
+      <p>Скриншоты статистики из аккаунта заказчика, период 27 октября – 25 ноября.</p>
+    </div>
+    <div class="shots">
+      <div class="shot reveal">
+        <figure><img src="../img/cases/cf-dashboard.jpg" alt="Статистика аккаунта за 30 дней: 204 111 просмотров, +7 451% к прошлому периоду, +185 подписчиков" width="591" height="988" loading="lazy"></figure>
+        <figcaption><b>204 111 просмотров за 30 дней</b><span>+7 451% к предыдущему периоду, +185 подписчиков</span></figcaption>
+      </div>
+      <div class="shot reveal d1">
+        <figure><img src="../img/cases/cf-reel-overview.jpg" alt="Статистика лучшего Reels: 29 197 просмотров, 18 235 зрителей, 12 подписок" width="591" height="1018" loading="lazy"></figure>
+        <figcaption><b>Лучший ролик: 29 197 просмотров</b><span>18 235 зрителей. Третья часть ролика-сериала</span></figcaption>
+      </div>
+      <div class="shot reveal d2">
+        <figure><img src="../img/cases/cf-reel-engagement.jpg" alt="Вовлечённость лучшего Reels: 143 лайка, 22 репоста, 14 сохранений, 12 подписок" width="591" height="1178" loading="lazy"></figure>
+        <figcaption><b>Репосты и подписки</b><span>22 репоста, 14 сохранений, 12 новых подписчиков с одного ролика</span></figcaption>
+      </div>
+    </div>
+    <p class="note reveal">Имя и аккаунт заказчика не раскрываются по договорённости.</p>
+  </section>
+
+  <!-- Что получает заказчик -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 04</p><h2 class="h2">Что это даёт</h2></div>
+    </div>
+    <div class="gains">
+      <div class="gain reveal"><em>i.</em><h3>Аккаунт живёт без вас</h3><p>Контент выходит каждый день, а эксперт тратит время только на согласование.</p></div>
+      <div class="gain reveal d1"><em>ii.</em><h3>Ваш голос и стиль</h3><p>Цифровой двойник, клон голоса и Tone of Voice: подписчики видят эксперта, а не шаблон.</p></div>
+      <div class="gain reveal d2"><em>iii.</em><h3>Темы, которые уже сработали</h3><p>План строится на том, что залетело у конкурентов, а не на догадках.</p></div>
+      <div class="gain reveal d3"><em>iv.</em><h3>Две площадки сразу</h3><p>Instagram и YouTube получают контент из одного производства.</p></div>
+    </div>
+  </section>
+
+  <!-- Призыв -->
+  <section class="final">
+    <h2 class="reveal">Хотите такой <i class="gold">контент-завод</i>?</h2>
+    <p class="reveal d1">Расскажите о своём аккаунте и нише. Я отвечу в Telegram и предложу, как собрать систему под вас.</p>
+    <div class="reveal d2">
+      <a class="btn" href="https://t.me/anna_sysoevaaa" target="_blank" rel="noopener">
+        Обсудить контент-завод
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+      </a>
+      <span class="more">или <a href="../#works">посмотреть другие работы</a></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a class="logo gold" href="../">АС.</a>
+  <span>© <span id="year"></span> Анна Сысоева · Вайбкодер</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

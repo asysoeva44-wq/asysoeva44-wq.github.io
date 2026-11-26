@@ -266,6 +266,14 @@
   .work:hover .work-info svg { transform: translateX(6px); }
 
   /* Мини-иллюстрации работ */
+  .v-factory { position: absolute; inset: 0; padding: 60px 18px 20px; display: flex; flex-direction: column; justify-content: space-between;
+    background: radial-gradient(circle at 80% 15%, rgba(236, 72, 153, .28), transparent 50%), radial-gradient(circle at 15% 90%, rgba(201, 164, 106, .22), transparent 55%), #120f0d; }
+  .v-factory svg { width: 100%; height: 46%; overflow: visible; }
+  .v-factory path { fill: none; stroke: #ec4899; stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; filter: drop-shadow(0 0 6px rgba(236, 72, 153, .6)); }
+  .v-factory p { display: flex; align-items: flex-end; gap: 12px; }
+  .v-factory b { font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: .85; color: var(--gold-1); }
+  .v-factory span { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); line-height: 1.4; }
+
   .v-card { position: absolute; inset: 0; display: grid; place-items: center;
     background: radial-gradient(circle at 25% 20%, rgba(168, 85, 247, .55), transparent 45%),
                 radial-gradient(circle at 80% 85%, rgba(236, 72, 153, .45), transparent 45%), #0b0b0d; }
@@ -575,23 +583,19 @@
     </div>
 
     <div class="track reveal" id="track">
-      <div class="work">
+      <a class="work" href="cases/content-factory.html">
         <div class="work-visual">
-          <span class="badge ready">Готово</span>
-          <div class="v-card" aria-hidden="true">
-            <div class="glass">
-              <div class="av"><i>АС</i></div>
-              <div class="bar" style="width:70%"></div>
-              <div class="bar" style="width:45%"></div>
-              <div class="pill"></div>
-            </div>
+          <span class="badge ready">Кейс</span>
+          <div class="v-factory" aria-hidden="true">
+            <svg viewBox="0 0 200 80" preserveAspectRatio="none"><path d="M0 58 L12 48 L22 46 L30 52 L38 44 L46 58 L58 62 L66 56 L74 54 L80 62 L90 46 L98 52 L106 52 L116 72 L130 72 L140 70 L150 72 L158 68 L164 72 L172 8 L178 72 L190 72 L200 73"/></svg>
+            <p><b>×75</b><span>просмотров<br>за 30 дней</span></p>
           </div>
         </div>
         <div class="work-info">
-          <div><h3>Сайт-визитка</h3><span>Анимированная карточка с контактами</span></div>
+          <div><h3>Контент-завод на ИИ</h3><span>Instagram + YouTube · 204 тыс. просмотров</span></div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
         </div>
-      </div>
+      </a>
 
       <a class="work" href="#top">
         <div class="work-visual">
