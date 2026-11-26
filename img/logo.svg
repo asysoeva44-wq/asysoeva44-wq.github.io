@@ -1,23 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 1 48 46" role="img" aria-label="АС">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 1 57 55" role="img" aria-label="АС">
   <defs>
-    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="4" y1="2" x2="52" y2="46">
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="4" y1="2" x2="61" y2="56">
       <stop offset="0" stop-color="#f6ead2"/><stop offset=".3" stop-color="#d8b77f"/>
       <stop offset=".55" stop-color="#f4e6c8"/><stop offset=".8" stop-color="#b8925a"/><stop offset="1" stop-color="#f1dfbb"/>
     </linearGradient>
-    <clipPath id="open"><path d="M0 0H64V48H0Z M35 25L64 -6V56Z" clip-rule="evenodd"/></clipPath>
-    <path id="c" clip-path="url(#open)" fill-rule="evenodd" d="M21 25a14 14 0 1 0 28 0a14 14 0 1 0-28 0Z M25.6 25a11.4 11.4 0 1 0 22.8 0a11.4 11.4 0 1 0-22.8 0Z"/>
-    <clipPath id="up"><rect x="0" y="0" width="64" height="25"/></clipPath>
-    <clipPath id="down"><rect x="0" y="25" width="64" height="23"/></clipPath>
-    <mask id="mA" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="48">
-      <rect width="64" height="48" fill="#fff"/>
-      <g clip-path="url(#up)"><use href="#c" fill="#000" stroke="#000" stroke-width="3.4"/></g>
-    </mask>
-    <mask id="mC" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="48">
-      <rect width="64" height="48" fill="#fff"/>
-      <g clip-path="url(#down)" fill="none" stroke="#000">
-        <path d="M22.6 4.6L37 45" stroke-width="7.6"/>
-        <path d="M12.4 31.5H32.6" stroke-width="4.4"/>
-      </g>
+    <clipPath id="open"><path d="M0 0H70V70H0Z M46 40L70 16V64Z" clip-rule="evenodd"/></clipPath>
+    <path id="c" clip-path="url(#open)" fill-rule="evenodd" d="M32 40a14 14 0 1 0 28 0a14 14 0 1 0-28 0Z M36.6 40a11.4 11.4 0 1 0 22.8 0a11.4 11.4 0 1 0-22.8 0Z"/>
+    <!-- ножка «А» уходит за «С»: видно касание только верхним краем -->
+    <mask id="mA" maskUnits="userSpaceOnUse" x="0" y="0" width="70" height="70">
+      <rect width="70" height="70" fill="#fff"/>
+      <circle cx="46" cy="40" r="15.7" fill="#000"/>
     </mask>
   </defs>
   <g fill="url(#g)">
@@ -25,6 +17,6 @@
       <path d="M21.2 3.2h2.2L39 45h-4.6L22 9.6 8.6 45H6.4Z"/>
       <rect x="12.6" y="30.8" width="20" height="1.4"/>
     </g>
-    <use href="#c" mask="url(#mC)"/>
+    <use href="#c"/>
   </g>
 </svg>
