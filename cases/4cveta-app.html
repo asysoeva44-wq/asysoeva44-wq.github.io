@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Telegram-бот и мини-приложение 4ЦВЕТА - кейс Анны Сысоевой</title>
+<link rel="icon" href="../img/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=2">
+<meta name="description" content="Telegram-бот с ИИ и мини-приложение для рекламного агентства 4ЦВЕТА: каталог из 14 услуг с ценами, заявки голосом и текстом, номер заявки прямо в чате.">
+<meta name="theme-color" content="#0e0c0a">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="case.css?v=2">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo gold" href="../" aria-label="На главную"><img src="../img/logo.svg?v=2" alt="АС" width="57" height="55"></a>
+  <a class="back" href="../#works">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    <span>Все работы</span>
+  </a>
+</header>
+
+<main class="wrap">
+  <!-- Обложка -->
+  <section class="hero">
+    <p class="kicker reveal">Кейс · Telegram-бот + мини-приложение</p>
+    <h1 class="reveal d1">Бот и мини-приложение для заявок <span class="gold">в Telegram</span></h1>
+    <p class="lead reveal d2">ИИ-помощник рекламного агентства и каталог услуг, который открывается внутри Telegram одной кнопкой. Клиент пишет боту или выбирает услуги в каталоге, отвечает на пару вопросов и отправляет заявку. Ничего не нужно скачивать, регистрироваться или искать сайт.</p>
+    <dl class="meta reveal d3">
+      <div><dt>Клиент</dt><dd>Рекламное агентство 4ЦВЕТА, Феодосия</dd></div>
+      <div><dt>Что сделано</dt><dd>Telegram-бот с ИИ, мини-приложение, сервер заявок</dd></div>
+      <div><dt>Где работает</dt><dd>Telegram на iPhone, Android и компьютере</dd></div>
+      <div><dt>Подход</dt><dd>Вайбкодинг с ИИ: от идеи до запуска</dd></div>
+    </dl>
+    <div class="demo-links reveal d3">
+      <a class="demo-link" href="https://t.me/fourcolorsbot_bot" target="_blank" rel="noopener">Открыть бота<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <a class="demo-link" href="https://t.me/fourcolorsbot_bot?startapp" target="_blank" rel="noopener">Открыть каталог в Telegram<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <a class="demo-link" href="https://asysoeva44-wq.github.io/4cveta-app/" target="_blank" rel="noopener">Посмотреть в браузере<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Задача -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 01</p><h2 class="h2">Задача</h2></div>
+    </div>
+    <div class="task">
+      <p class="quote reveal">Клиенты агентства и так пишут в Telegram. Значит, и заказывать им удобнее всего там же.<small>Идея</small></p>
+      <div class="reveal d1">
+        <p>У 4ЦВЕТА 14 направлений: визитки и печать, вывески и световые короба, брендирование транспорта, сувениры, дизайн, SMM, сайты и чат-боты. Чтобы посчитать заказ, менеджеру нужно задать клиенту несколько вопросов, и обычно это долгая переписка.</p>
+        <p>Нужен был <b>помощник в Telegram</b>, который принимает заявки круглосуточно, и <b>удобный каталог с ценами</b> прямо там же: клиент сам выбирает, что ему нужно, сразу отвечает на нужные вопросы, а агентство получает готовую заявку с номером.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Бот -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 02</p><h2 class="h2">Telegram-бот</h2></div>
+      <p>Точка входа для клиента: с бота начинается разговор, и туда же приходит готовая заявка.</p>
+    </div>
+    <article class="part">
+      <div class="part-text reveal">
+        <h3>ИИ-помощник агентства</h3>
+        <p>Принимает заявки круглосуточно и сам собирает из ответов клиента понятное описание задачи.</p>
+        <ul class="ticks">
+          <li>Задачу можно написать или наговорить голосом, ИИ разбирает ответы</li>
+          <li>Ведёт по сценарию: задаёт те же вопросы, что задал бы менеджер</li>
+          <li>Каталог-мини-приложение открывается из бота одной кнопкой</li>
+          <li>Клиент получает карточку заявки с номером, директор письмо</li>
+          <li>Если ИИ недоступен, бот продолжает принимать заявки</li>
+        </ul>
+      </div>
+      <div class="part-media reveal d1">
+        <div class="v-chat" aria-hidden="true">
+          <div class="bubble b">Здравствуйте! Я помощник агентства 4ЦВЕТА. Откройте каталог или опишите задачу, можно голосом 🎙</div>
+          <div class="bubble u">Нужны визитки 1000 шт и баннер на фасад</div>
+          <div class="bubble b">Отлично! Откройте каталог, добавьте обе услуги в заявку, и менеджер пришлёт расчёт.</div>
+          <div class="chat-btn">Открыть каталог</div>
+          <p class="chat-note">Схема диалога, иллюстрация</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Экраны -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 03</p><h2 class="h2">Мини-приложение</h2></div>
+      <p>Фирменные CMYK-цвета агентства и персонаж-маскот, как на сайте. Путь от каталога до заявки занимает пару минут.</p>
+    </div>
+    <div class="shots four">
+      <div class="shot reveal">
+        <figure><img src="../img/cases/4ca-1-catalog.jpg" alt="Главный экран мини-приложения: каталог услуг 4ЦВЕТА с ценами «от»" width="591" height="1279" loading="lazy"></figure>
+        <figcaption><b>Каталог с ценами</b><span>14 услуг, у каждой цена «от» или способ расчёта</span></figcaption>
+      </div>
+      <div class="shot reveal d1">
+        <figure><img src="../img/cases/4ca-2-service.jpg" alt="Экран услуги «Визитки»: таблица цен и уточняющие вопросы с вариантами ответа" width="591" height="1279" loading="lazy"></figure>
+        <figcaption><b>Вопросы по услуге</b><span>Ответ в одно касание, можно дописать своими словами</span></figcaption>
+      </div>
+      <div class="shot reveal d2">
+        <figure><img src="../img/cases/4ca-3-options.jpg" alt="Экран услуги «Наружная реклама»: выбор вида, лайтбоксы, вывески, интерьеры" width="591" height="1279" loading="lazy"></figure>
+        <figcaption><b>Варианты внутри услуги</b><span>Вопросы подстраиваются под выбранный вид работ</span></figcaption>
+      </div>
+      <div class="shot reveal d3">
+        <figure><img src="../img/cases/4ca-4-order.jpg" alt="Экран заявки: две услуги в заявке, имя и телефон, кнопка «Отправить заявку»" width="591" height="1279" loading="lazy"></figure>
+        <figcaption><b>Одна заявка на всё</b><span>Несколько услуг, контакты и отправка одной кнопкой</span></figcaption>
+      </div>
+    </div>
+    <p class="note">Скриншоты мини-приложения, имя и телефон на последнем экране тестовые.</p>
+  </section>
+
+  <!-- Что внутри -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 04</p><h2 class="h2">Что внутри</h2></div>
+      <p>Снаружи простой каталог, а под капотом сервер, который принимает заявку, проверяет её и оформляет.</p>
+    </div>
+    <div class="inside">
+      <ul class="ticks reveal">
+        <li>Бот и каталог работают по одним сценариям, поэтому всегда говорят одно и то же</li>
+        <li>Заявку можно собрать из нескольких услуг, а любую из них отредактировать или убрать</li>
+        <li>Имя и телефон клиента подставляются из Telegram сами</li>
+        <li>Корзина сохраняется: если закрыть приложение, выбор не пропадёт</li>
+      </ul>
+      <ul class="ticks reveal d1">
+        <li>Сервер проверяет цифровую подпись Telegram, подделать заявку со стороны нельзя</li>
+        <li>Заявка уходит мгновенно, а оформление идёт в фоне: ИИ составляет понятное описание задачи</li>
+        <li>Каждая заявка получает сквозной номер, общий для чата и каталога</li>
+        <li>Клиенту в чат приходит карточка с номером, директору агентства письмо</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Путь клиента -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 05</p><h2 class="h2">Путь клиента</h2></div>
+      <p>Клиент приходит с сайта агентства, из поиска в Telegram или по прямой ссылке.</p>
+    </div>
+    <ol class="path reveal">
+      <li><em>i.</em><b>Пишет боту</b><span>или сразу открывает каталог кнопкой на сайте</span></li>
+      <li><em>ii.</em><b>Выбирает услуги</b><span>и отвечает на пару вопросов по каждой</span></li>
+      <li><em>iii.</em><b>Отправляет заявку</b><span>контакты уже заполнены, остаётся одна кнопка</span></li>
+      <li><em>iv.</em><b>Получает номер</b><span>карточка заявки приходит в чат, агентство берёт её в работу</span></li>
+    </ol>
+  </section>
+
+  <!-- Что это даёт -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 06</p><h2 class="h2">Что это даёт</h2></div>
+    </div>
+    <div class="gains">
+      <div class="gain reveal"><em>i.</em><h3>Заказ без переписки</h3><p>Клиент сам отвечает на вопросы, которые обычно задаёт менеджер.</p></div>
+      <div class="gain reveal d1"><em>ii.</em><h3>Там, где клиент уже есть</h3><p>Не нужно скачивать приложение или искать сайт, всё внутри Telegram.</p></div>
+      <div class="gain reveal d2"><em>iii.</em><h3>Ни одна заявка не теряется</h3><p>У каждой есть номер, а детали остаются в чате и в таблице заявок.</p></div>
+      <div class="gain reveal d3"><em>iv.</em><h3>В стиле бренда</h3><p>Цвета и маскот агентства, приложение выглядит как часть компании.</p></div>
+    </div>
+  </section>
+
+  <!-- Призыв -->
+  <section class="final">
+    <h2 class="reveal">Нужен <i class="gold">бот для заявок</i>?</h2>
+    <p class="reveal d1">Расскажите, что вы продаёте. Я отвечу в Telegram и предложу, как собрать бота и мини-приложение под ваш бизнес: запись к мастеру, заказ товаров или расчёт услуг.</p>
+    <div class="reveal d2">
+      <a class="btn" href="https://t.me/anna_sysoevaaa" target="_blank" rel="noopener">
+        Обсудить проект
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+      </a>
+      <span class="more">или <a href="4cveta.html">посмотреть сайт 4ЦВЕТА</a></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a class="logo gold" href="../" aria-label="На главную"><img src="../img/logo.svg?v=2" alt="АС" width="57" height="55"></a>
+  <span>© <span id="year"></span> Анна Сысоева · Вайбкодер</span>
+</footer>
+
+<style>
+  .v-chat { width: 100%; max-width: 380px; padding: 26px 20px; border-radius: 22px; display: flex; flex-direction: column; gap: 12px;
+    border: 1px solid var(--line); background: radial-gradient(circle at 80% 10%, rgba(236, 0, 140, .18), transparent 55%), #14110e; }
+  .bubble { max-width: 84%; padding: 11px 15px; border-radius: 16px; font-size: 14px; line-height: 1.45; }
+  .bubble.u { align-self: flex-end; background: var(--gold-2); color: #1a140d; border-bottom-right-radius: 4px; }
+  .bubble.b { background: rgba(239, 230, 216, .08); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+  .chat-note { margin-top: 6px; text-align: center; font-size: 12px; color: var(--dim); }
+  .chat-btn { margin-top: 4px; padding: 12px; border-radius: 12px; text-align: center; font-size: 14px; font-weight: 600; color: #fff; background: linear-gradient(90deg, #00a6d6, #ec008c 55%, #ffd200); }
+  .shots.four { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .shots.four .shot { max-width: 250px; }
+  .inside { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 70px); }
+  @media (max-width: 1000px) { .shots.four { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; } }
+  @media (max-width: 860px) { .inside { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .shots.four { grid-template-columns: 1fr; } }
+</style>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

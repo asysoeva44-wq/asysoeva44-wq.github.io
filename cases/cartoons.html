@@ -6,7 +6,7 @@
 <title>Мультфильмы на ИИ — кейс Анны Сысоевой</title>
 <link rel="icon" href="../img/favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=2">
-<meta name="description" content="Мультфильмы, созданные с помощью нейросетей: свадебная история пары от детства до «да» и короткие мультики о девочке и котиках.">
+<meta name="description" content="Мультфильмы, созданные с помощью нейросетей: свадебная история пары, короткие мультики о девочке и котиках и рекламные мультролики для агентства 4ЦВЕТА.">
 <meta name="theme-color" content="#0e0c0a">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="stylesheet" href="case.css?v=2">
@@ -15,6 +15,9 @@
   .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; border-radius: 22px; border: 1px solid rgba(232, 200, 140, .18); box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8); }
   .film figcaption { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 14px; color: rgba(243, 236, 225, .6); font-size: 15px; }
   .film figcaption b { color: #f3ece1; font-weight: 500; }
+  .films-v { display: grid; grid-template-columns: repeat(2, minmax(0, 340px)); gap: 40px; justify-content: center; }
+  .film.vert video { aspect-ratio: 9 / 16; object-fit: cover; }
+  .film.vert figcaption { flex-direction: column; gap: 4px; }
   .films-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
   .story { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 36px; border-top: 1px solid rgba(232, 200, 140, .14); }
   .story li { list-style: none; padding: 22px 22px 0 0; }
@@ -23,10 +26,12 @@
   .story span { color: rgba(243, 236, 225, .6); font-size: 15px; line-height: 1.55; }
   @media (max-width: 900px) {
     .films-2 { grid-template-columns: 1fr; }
+    .films-v { gap: 20px; }
     .story { grid-template-columns: 1fr 1fr; }
     .story li:nth-child(3) { padding-left: 0; border-left: 0; }
   }
   @media (max-width: 560px) {
+    .films-v { grid-template-columns: minmax(0, 340px); }
     .story { grid-template-columns: 1fr; }
     .story li, .story li + li { padding-left: 0; border-left: 0; }
     .film video { border-radius: 16px; }
@@ -48,11 +53,11 @@
   <section class="hero">
     <p class="kicker reveal">Кейс · Мультфильмы на ИИ</p>
     <h1 class="reveal d1">Мультфильмы, <span class="gold">в которых узнают себя</span></h1>
-    <p class="lead reveal d2">Нейросети позволяют сделать мультфильм с вашими героями без студии анимации: историю пары к свадьбе, ролик для бренда или сказку для ребёнка. Ниже два примера: свадебный подарок и короткие мультики о девочке и котиках.</p>
+    <p class="lead reveal d2">Нейросети позволяют сделать мультфильм с вашими героями без студии анимации: историю пары к свадьбе, ролик для бренда или сказку для ребёнка. Ниже примеры: свадебный подарок, короткие мультики о девочке и котиках и рекламные ролики для агентства.</p>
     <dl class="meta reveal d3">
       <div><dt>Формат</dt><dd>Мультфильмы в 3D-стиле</dd></div>
       <div><dt>Хронометраж</dt><dd>от 15 секунд до 1,5 минуты</dd></div>
-      <div><dt>Поводы</dt><dd>Свадьба, подарок, контент для соцсетей</dd></div>
+      <div><dt>Поводы</dt><dd>Свадьба, подарок, реклама, контент для соцсетей</dd></div>
       <div><dt>Подход</dt><dd>Сценарий, персонажи и анимация с ИИ</dd></div>
     </dl>
   </section>
@@ -99,10 +104,32 @@
     </div>
   </section>
 
+  <!-- Реклама 4ЦВЕТА -->
+  <section class="section">
+    <div class="section-head reveal">
+      <div><p class="num">/ 03</p><h2 class="h2">Реклама для 4ЦВЕТА</h2></div>
+      <p>Вертикальные рекламные мультролики для рекламного агентства из Феодосии: короткая история с понятной болью бизнеса и решением в конце. Формат для клипов ВКонтакте, Reels и Shorts.</p>
+    </div>
+    <div class="films-v">
+      <figure class="film vert reveal">
+        <video controls preload="none" playsinline poster="../img/cases/4c-ad-1.jpg" width="720" height="1280">
+          <source src="../media/4c-ad-1.mp4" type="video/mp4">
+        </video>
+        <figcaption><b>«Хватит продвигаться по-древнему»</b><span>Яркая вывеска для пещерной кофейни · 24 с</span></figcaption>
+      </figure>
+      <figure class="film vert reveal d1">
+        <video controls preload="none" playsinline poster="../img/cases/4c-ad-2.jpg" width="720" height="1254">
+          <source src="../media/4c-ad-2.mp4" type="video/mp4">
+        </video>
+        <figcaption><b>«Автоматизируйте приём заявок»</b><span>ИИ-помощник для кофейни · 26 с</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- Как работаю -->
   <section class="section">
     <div class="section-head reveal">
-      <div><p class="num">/ 03</p><h2 class="h2">Как появляется мультфильм</h2></div>
+      <div><p class="num">/ 04</p><h2 class="h2">Как появляется мультфильм</h2></div>
     </div>
     <ol class="flow">
       <li class="step reveal">
@@ -130,7 +157,7 @@
 
   <section class="section">
     <div class="section-head reveal">
-      <div><p class="num">/ 04</p><h2 class="h2">Что это даёт</h2></div>
+      <div><p class="num">/ 05</p><h2 class="h2">Что это даёт</h2></div>
     </div>
     <div class="gains">
       <div class="gain reveal"><em>i.</em><h3>Подарок, который запомнят</h3><p>Мультфильм о паре или семье трогает сильнее любого слайд-шоу из фотографий.</p></div>
